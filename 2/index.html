@@ -3,26 +3,30 @@
 <head>
     <title>сайт</title>
 </head>
-  <body style="margin:0;">
+<body>
 
-    <!-- этот блок будет тянуться по ширине окна -->
-    <div style="width:100%; background-color:#ccc; padding: 10px; height:120px;">
-      <!-- картинка обтекает текст слева -->
-      <img style="float:left; margin:10px; width:100px; height:100px;" src="image.png" alt="Описание картинки для скрин-ридеров и поисковиков" />
-      <!-- этот блок, как положено блочному элементу по умолчанию, займет всю оставшуюся ширину родительского элемента -->
-      <div style="background-color:#ddd; padding:10px;">Текст</div>
+<body style="margin:0>
+ <div style="width:100%; background-color:#ccc; padding: 100px; height:120px;">
+ <img style="float:left; margin:10px; width:100px;float:left; height:100px;" src="image.png" alt="картинка" />
+ <div style="background-color:#ddd;float:right; padding:20px;">
+		<a style="margin-right:100px;" href="#ssyl" title="ссылки"> Ссылки  </a>
+      			   
+		<a style="margin-right:100px;" href="#tabl" title="таблица"> Таблица  </a>
+			   
+		<a href="#form" title="форма"> Форма  </a>
+    </div>
+</div>
+    </div>
+<div style="max-width:100%; background-color:#ccc; margin: 0 auto; padding:25px;">
+	<h2> название сайта</h2>
     </div>
 
-    <!-- этот блок будет ограничен по ширине и горизонтально выровнен по центру родительского элемента -->
-    <div style="max-width:800px; background-color:#ccc; margin: 0 auto; margin-top:20px; padding:10px;">
-    Контент
-    </div>
+    <div style="width:100%; background-color:#ccc; margin:50px; padding:50px;">
+      
 
-    <div style="width:100px; background-color:#ccc; margin:50px; padding:50px;">
-      <span style="background-color:red;">Контент</span>
-    </div>
 
 	<h2>Ссылки</h2>
+<div id="ssyl"> </div>
 <ul>
 	<li> <a id="up" href = "https://www.kubsu.ru/index.php" title="Главная страница сайта КубГУ"> 1. Абсолютная гиперссылка </a> </li>
 	<li> <a href="https://www.kubsu.ru/" title="Начальная страница сайта КубГУ"> 2. Абсолютная гиперссылка протоколе https </a> </li>
@@ -57,7 +61,54 @@
         </li>
 </ul>
 
-	
+	</div>
+<div id="tabl"> </div>
+<h2>Таблица</h2>
+ <div style="width:100%; background-color:#ccc; margin:50px; padding:50px;">
+	 <table>
+    	  
+
+<tr>
+       		 <th>Колонка 1</th>
+       		 <th>Колонка 2</th>
+ 		 <th>Колонка 3</th>
+		 <th>Колонка 4</th>
+ </tr>
+
+     	 </tr>
+      	<tr>
+   	     <td colspan="2">Ячейка 11 объединенная с 12</td>
+   	   </tr>
+   	   <tr>
+   	    	 <td>Ячейка 21</td>
+       		 <td>Ячейка 22</td>
+     	 </tr>
+<tr>
+   	    	 <td>Ячейка 31</td>
+       		 <td>Ячейка 32</td>
+		 <td>Ячейка 33</td>
+     	 </tr>
+<tr>
+   	    	 <td>Ячейка 41</td>
+       		 <td>Ячейка 42</td>
+   	    	 <td>Ячейка 43</td>
+       		 <td>Ячейка 44</td>
+     	 </tr>
+<tr>
+   	    	 <td>Ячейка 51</td>
+       		 <td>Ячейка 52</td>
+     	 </tr>
+<tr>
+   	    	 <td>Ячейка 61</td>
+       		 <td>Ячейка 62</td>
+   	    	 <td>Ячейка 63</td>
+       		 <td>Ячейка 64</td>
+     	 </tr>
+
+  	  </table>
+
+</div>
+<div id="form"> </div>
   <h2>Форма</h2>
     	<form action="/" method="POST">
 	<label>
