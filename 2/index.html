@@ -3,15 +3,19 @@
 <head>
     <title>сайт</title>
 </head>
-<body>
+  <body style="margin:0;">
 
-<body style="margin:0>
- <div style="width:100%; background-color:#ccc; padding: 10px; height:120px;">
- <img style="float:left; margin:10px; width:100px; height:100px;" src="image.png" alt="картинка" />
-  <div style="background-color:#ddd; padding:10px;">название сайта</div>
+    <!-- этот блок будет тянуться по ширине окна -->
+    <div style="width:100%; background-color:#ccc; padding: 10px; height:120px;">
+      <!-- картинка обтекает текст слева -->
+      <img style="float:left; margin:10px; width:100px; height:100px;" src="image.png" alt="Описание картинки для скрин-ридеров и поисковиков" />
+      <!-- этот блок, как положено блочному элементу по умолчанию, займет всю оставшуюся ширину родительского элемента -->
+      <div style="background-color:#ddd; padding:10px;">Текст</div>
     </div>
-<div style="max-width:800px; background-color:#ccc; margin: 0 auto; margin-top:20px; padding:10px;">
 
+    <!-- этот блок будет ограничен по ширине и горизонтально выровнен по центру родительского элемента -->
+    <div style="max-width:800px; background-color:#ccc; margin: 0 auto; margin-top:20px; padding:10px;">
+    Контент
     </div>
 
     <div style="width:100px; background-color:#ccc; margin:50px; padding:50px;">
