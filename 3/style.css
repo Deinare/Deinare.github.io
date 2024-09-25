@@ -1,3 +1,92 @@
+#osnova
+{
+  display: flex;
+  flex-direction: column;
+}
+#osnova sect, #osnova nav, #osnova vasn, #osnova ass
+{
+  justify-content: center;
+  display: flex;
+  background-color: #ddd;
+  margin: 10px; 
+  padding: 10px;
+}
+#osnova header
+{
+  flex: 1;
+  order: 1;
+  display: flex;
+  background-color:#98FB98;
+  background-position: center;
+  background-size: auto;
+}
+#osnova nav{
+justify-content: space-around;
+  display: flex;
+  order: 2;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+}
+#osnova vasn
+{
+  flex: 1;
+  order: 4;
+}
+#osnova ass{
+  flex: 3;
+  order: 3;
+  font-size: 12pt;
+  font-family: "Courier New", monotype;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 120%
+}
+#osnova sect{
+  flex: 3;
+  order: 5;
+}
+#osnova footer{
+background-color:#2E8B57; 
+padding-left: 70px;
+padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+@media screen and (min-width: 800px) {
+  #osnova header {
+    flex: 1;
+    order: 1;
+    justify-content: space-between;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    background-image: url(imageH.png);
+    background-position: right;
+    background-size: auto;
+  }
+  #osnova vasn {
+    flex: 1;
+    order: 3;
+    justify-content: center;
+    display: flex;
+  }
+  #osnova ass {
+    flex: 3;
+    order: 4;
+    font-size: 12pt;
+    font-family: "Courier New", monotype;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 120%
+  }
+  .grid {
+ display: grid;
+ grid: 1fr 25% 30px / 40% 1fr;
+ height: 200px;
+ background-color: aliceblue;
+}
+}
+
 .zel{
 background: #2E8B57;
 }
