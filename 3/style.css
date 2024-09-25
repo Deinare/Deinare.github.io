@@ -6,7 +6,7 @@
 #main-aside-wrapper main, #main-aside-wrapper aside {
   justify-content: center;
   display: flex;
-  background-color: #ddd;
+  background-color: #98FB98;
   margin: 10px; 
   padding: 10px;
 }
