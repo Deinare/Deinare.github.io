@@ -46,10 +46,15 @@ justify-content: space-around;
   order: 5;
 }
 #osnova footer{
-background-color:#2E8B57; 
-padding-left: 70px;
-padding-top: 10px;
- padding-bottom: 10px;
+flex: 3;
+  order: 6;
+  background-color: #7474d1;
+  padding-left: 70px;
+  padding-block: 10px;
+  border-block-style: solid;
+  border-block-width: 3px;
+  border-inline-width: 3px;
+  border-inline-style: solid;
 }
 
 @media screen and (min-width: 800px) {
@@ -107,16 +112,6 @@ div.h3 {
 .zel{
 background: #2E8B57;
 }
-div.ser
-{
-width:960px; 
-background-color:#98FB98; 
-margin-left:420px; 
-margin-top:50px;
-margin-bottom:50px;
-padding:50px;
-
-}
 #fonsa{
   background: url(fon.jpg); 
   background-repeat: no-repeat;
@@ -124,10 +119,4 @@ padding:50px;
   background-position: center;
   background-attachment: fixed; 
 }
-footer{
-background-color:#2E8B57; 
-padding-left: 70px;
-padding-top: 10px;
- padding-bottom: 10px;
 
-}
