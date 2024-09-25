@@ -18,7 +18,7 @@
   background-position: center;
   background-size: auto;
 }
-#main-aside-wrapper  nav {
+#main-aside-wrapper nav {
   justify-content: space-around;
   display: flex;
   order: 2;
@@ -27,11 +27,11 @@
   }
 #main-aside-wrapper  main {
   flex: 1;
-  order: 4;
+  order: 3;
 }
 #main-aside-wrapper  aside {
   flex: 3;
-  order: 3;
+  order: 4;
 
 }
 #main-aside-wrapper  section {
