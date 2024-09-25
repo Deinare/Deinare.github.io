@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
 }
-#main-aside-wrapper  forma, #main-aside-wrapper  nav,
-#main-aside-wrapper  ssul, #main-aside-wrapper  tabel {
+#main-aside-wrapper section, #main-aside-wrapper nav,
+#main-aside-wrapper main, #main-aside-wrapper aside {
   justify-content: center;
   display: flex;
   background-color: #98FB98;
@@ -25,16 +25,16 @@
   text-transform: capitalize;
   letter-spacing: .2em;
   }
-#main-aside-wrapper  ssul {
+#main-aside-wrapper  main {
   flex: 1;
   order: 4;
 }
-#main-aside-wrapper  tabel {
+#main-aside-wrapper  aside {
   flex: 3;
   order: 3;
 
 }
-#main-aside-wrapper  forma {
+#main-aside-wrapper  section {
   flex: 3;
   order: 5;
 }
@@ -58,13 +58,13 @@
     background-position: right;
     background-size: auto;
   }
-  #main-aside-wrapper  ssul {
+  #main-aside-wrapper  main {
     flex: 1;
     order: 3;
     justify-content: center;
     display: flex;
   }
-  #main-aside-wrapper forma {
+  #main-aside-wrapper aside {
     flex: 3;
     order: 4;
     line-height: 120%
