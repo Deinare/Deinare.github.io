@@ -48,10 +48,6 @@
   background-color: #2E8B57;
   padding-left: 70px;
   padding-block: 10px;
-  border-block-style: solid;
-  border-block-width: 3px;
-  border-inline-width: 3px;
-  border-inline-style: solid;
 }
  
 @media screen and (min-width: 800px) {
