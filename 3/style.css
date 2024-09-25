@@ -45,7 +45,7 @@
 #main-aside-wrapper footer {
   flex: 3;
   order: 6;
-  background-color: #2E8B57;
+  background-color: #3CB371;
   padding-left: 70px;
   padding-block: 10px;
 }
@@ -58,7 +58,7 @@
     display: flex;
     margin: 10px;
     padding: 10px;
-    background-color:#00FA9A;
+    background-color:#3CB371;
     background-position: right;
     background-size: auto;
   }
