@@ -1,16 +1,16 @@
-#main-aside-wrapper {
+#osnova {
   display: flex;
   flex-direction: column;
 }
-#main-aside-wrapper forma, #main-aside-wrapper nav,
-#main-aside-wrapper ssul, #main-aside-wrapper tabel {
+#osnova forma, #osnova nav,
+#osnova ssul, #osnovar tabel {
   justify-content: center;
   display: flex;
   background-color: #98FB98;
   margin: 10px; 
   padding: 10px;
 }
-#main-aside-wrapper header {
+#osnova header {
   flex: 1;
   order: 1;
   display: flex;
@@ -18,27 +18,27 @@
   background-position: center;
   background-size: auto;
 }
-#main-aside-wrapper nav {
+#osnova nav {
   justify-content: space-around;
   display: flex;
   order: 2;
   text-transform: capitalize;
   letter-spacing: .2em;
   }
-#main-aside-wrapper ssul {
+#osnova ssul {
   flex: 1;
   order: 4;
 }
-#main-aside-wrapper tabel {
+#osnova tabel {
   flex: 3;
   order: 3;
 
 }
-#main-aside-wrapper forma {
+#osnova forma {
   flex: 3;
   order: 5;
 }
-#main-aside-wrapper footer {
+#osnova footer {
   flex: 3;
   order: 6;
   background-color: #2E8B57;
@@ -47,7 +47,7 @@
 }
  
 @media screen and (min-width: 800px) {
-  #main-aside-wrapper header {
+  #osnova header {
     flex: 1;
     order: 1;
     justify-content: space-between;
@@ -58,26 +58,22 @@
     background-position: right;
     background-size: auto;
   }
-  #main-aside-wrapper main {
+  #osnova ssyl {
     flex: 1;
     order: 3;
     justify-content: center;
     display: flex;
   }
-  #main-aside-wrapper aside {
+  #osnova form {
     flex: 3;
     order: 4;
-    font-size: 12pt;
-    font-family: "Courier New", monotype;
-    font-weight: bold;
-    font-style: italic;
     line-height: 120%
   }
   .grid {
  display: grid;
- grid: 1fr 25% 30px / 40% 1fr;
+ grid: 1fr 20% 30px / 30% 1fr;
  height: 200px;
- background-color: aliceblue;
+ background-color: #7FFFD4;
 }
 }
 
@@ -91,12 +87,12 @@ margin-block: 20px;
 float: left;
 }
 
-div.hed { 
+div.heads { 
   width: 65%;
-  height: 50px;
+  height: 40px;
   font-size: 20px;
   background-color: #2E8B57;
-  border-radius: 14px;
+  border-radius: 12px;
   display: flex;
   margin-block: auto;
 }
