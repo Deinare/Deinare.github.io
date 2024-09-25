@@ -14,7 +14,7 @@
   flex: 1;
   order: 1;
   display: flex;
-  background-image: url(imageH.png);
+  background-color:#00FA9A;
   background-position: center;
   background-size: auto;
 }
@@ -45,7 +45,7 @@
 #main-aside-wrapper footer {
   flex: 3;
   order: 6;
-  background-color: #7474d1;
+  background-color: #2E8B57;
   padding-left: 70px;
   padding-block: 10px;
   border-block-style: solid;
@@ -62,7 +62,7 @@
     display: flex;
     margin: 10px;
     padding: 10px;
-    background-image: url(imageH.png);
+    background-color:#00FA9A;
     background-position: right;
     background-size: auto;
   }
@@ -102,7 +102,7 @@ div.hed {
   width: 65%;
   height: 50px;
   font-size: 20px;
-  background-color: #d7ca9763;
+  background-color: #2E8B57;
   border-radius: 14px;
   display: flex;
   margin-block: auto;
@@ -116,7 +116,7 @@ tr:nth-child(even) {
   background-color: #d0c671;
 }
 #bg-ex-fixed{
-  background: url(fon2.png); 
+  background: url(fon.jpg); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
