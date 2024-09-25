@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
 }
-#main-aside-wrapper section, #main-aside-wrapper nav,
-#main-aside-wrapper main, #main-aside-wrapper aside {
+#main-aside-wrapper forma, #main-aside-wrapper nav,
+#main-aside-wrapper ssul, #main-aside-wrapper tabel {
   justify-content: center;
   display: flex;
   background-color: #98FB98;
@@ -22,19 +22,19 @@
   justify-content: space-around;
   display: flex;
   order: 2;
-  text-transform: uppercase;
+  text-transform: capitalize;
   letter-spacing: .2em;
   }
-#main-aside-wrapper main {
+#main-aside-wrapper ssul {
   flex: 1;
   order: 4;
 }
-#main-aside-wrapper aside {
+#main-aside-wrapper tabel {
   flex: 3;
   order: 3;
 
 }
-#main-aside-wrapper section {
+#main-aside-wrapper forma {
   flex: 3;
   order: 5;
 }
@@ -102,13 +102,13 @@ div.hed {
 }
 
 tr:nth-child(odd) {
-  background-color: antiquewhite;
+  background-color: #B0C4DE;
 }
 
 tr:nth-child(even) {
-  background-color: #d0c671;
+  background-color: #FFA07A;
 }
-#bg-ex-fixed{
+#fonsa{
   background: url(fon.jpg); 
   background-repeat: no-repeat;
   background-size: cover;
