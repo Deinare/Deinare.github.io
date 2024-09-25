@@ -4,11 +4,15 @@ background: #2E8B57;
 .ser
 {
 width:960px; 
-background-color:#98FB98; 
-margin-left:420px; 
-margin-top:50px;
-margin-bottom:50px;
-padding:50px;
-
+background-color:#ccc; 
+margin: 0 auto; margin-top:20px; padding:10px;
 }
+#fonsa{
+  background: url(fon.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+}
+
 
