@@ -1,38 +1,35 @@
-#osnova
-{
+#main-aside-wrapper {
   display: flex;
   flex-direction: column;
 }
-#osnova sect, #osnova nav, #osnova vasn, #osnova ass
-{
+#main-aside-wrapper section, #main-aside-wrapper nav,
+#main-aside-wrapper main, #main-aside-wrapper aside {
   justify-content: center;
   display: flex;
   background-color: #ddd;
   margin: 10px; 
   padding: 10px;
 }
-#osnova header
-{
+#main-aside-wrapper header {
   flex: 1;
   order: 1;
   display: flex;
-  background-color:#98FB98;
+  background-image: url(imageH.png);
   background-position: center;
   background-size: auto;
 }
-#osnova nav{
-justify-content: space-around;
+#main-aside-wrapper nav {
+  justify-content: space-around;
   display: flex;
   order: 2;
   text-transform: uppercase;
   letter-spacing: .2em;
-}
-#osnova vasn
-{
+  }
+#main-aside-wrapper main {
   flex: 1;
   order: 4;
 }
-#osnova ass{
+#main-aside-wrapper aside {
   flex: 3;
   order: 3;
   font-size: 12pt;
@@ -41,12 +38,12 @@ justify-content: space-around;
   font-style: italic;
   line-height: 120%
 }
-#osnova sect{
+#main-aside-wrapper section {
   flex: 3;
   order: 5;
 }
-#osnova footer{
-flex: 3;
+#main-aside-wrapper footer {
+  flex: 3;
   order: 6;
   background-color: #7474d1;
   padding-left: 70px;
@@ -56,9 +53,9 @@ flex: 3;
   border-inline-width: 3px;
   border-inline-style: solid;
 }
-
+ 
 @media screen and (min-width: 800px) {
-  #osnova header {
+  #main-aside-wrapper header {
     flex: 1;
     order: 1;
     justify-content: space-between;
@@ -69,13 +66,13 @@ flex: 3;
     background-position: right;
     background-size: auto;
   }
-  #osnova vasn {
+  #main-aside-wrapper main {
     flex: 1;
     order: 3;
     justify-content: center;
     display: flex;
   }
-  #osnova ass {
+  #main-aside-wrapper aside {
     flex: 3;
     order: 4;
     font-size: 12pt;
@@ -91,16 +88,17 @@ flex: 3;
  background-color: aliceblue;
 }
 }
-#logotip
-{
-  width: 100px;
+
+#logo {
+width: 100px;
 height: 100px;
   margin-top: 0px;
 margin-inline: 20px;
 margin-block: 20px;
 float: left;
 }
-div.h3 { 
+
+div.hed { 
   width: 65%;
   height: 50px;
   font-size: 20px;
@@ -109,14 +107,18 @@ div.h3 {
   display: flex;
   margin-block: auto;
 }
-.zel{
-background: #2E8B57;
+
+tr:nth-child(odd) {
+  background-color: antiquewhite;
 }
-#fonsa{
-  background: url(fon.jpg); 
+
+tr:nth-child(even) {
+  background-color: #d0c671;
+}
+#bg-ex-fixed{
+  background: url(fon2.png); 
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; 
 }
-
