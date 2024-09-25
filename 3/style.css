@@ -27,11 +27,16 @@
   }
 #main-aside-wrapper main {
   flex: 1;
-  order: 4;
+  order: 3;
 }
 #main-aside-wrapper aside {
   flex: 3;
-  order: 3;
+  order: 4;
+  font-size: 12pt;
+  font-family: "Courier New", monotype;
+  font-weight: bold;
+  font-style: italic;
+  line-height: 120%
 }
 #main-aside-wrapper section {
   flex: 3;
