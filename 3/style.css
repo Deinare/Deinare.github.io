@@ -89,10 +89,11 @@
 }
 }
 
-#logo {
+#logotip {
+border-radius:100px;
 width: 100px;
 height: 100px;
-  margin-top: 0px;
+margin-top: 0px;
 margin-inline: 20px;
 margin-block: 20px;
 float: left;
