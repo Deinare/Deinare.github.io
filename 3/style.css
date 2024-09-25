@@ -1,4 +1,4 @@
-#main-aside-wrapper  {
+#main-aside-wrapper {
   display: flex;
   flex-direction: column;
 }
@@ -10,7 +10,7 @@
   margin: 10px; 
   padding: 10px;
 }
-#main-aside-wrapper  header {
+#main-aside-wrapper header {
   flex: 1;
   order: 1;
   display: flex;
@@ -22,23 +22,22 @@
   justify-content: space-around;
   display: flex;
   order: 2;
-  text-transform: capitalize;
+  text-transform: uppercase;
   letter-spacing: .2em;
   }
-#main-aside-wrapper  main {
+#main-aside-wrapper main {
   flex: 1;
+  order: 4;
+}
+#main-aside-wrapper aside {
+  flex: 3;
   order: 3;
 }
-#main-aside-wrapper  aside {
-  flex: 3;
-  order: 4;
-
-}
-#main-aside-wrapper  section {
+#main-aside-wrapper section {
   flex: 3;
   order: 5;
 }
-#main-aside-wrapper  footer {
+#main-aside-wrapper footer {
   flex: 3;
   order: 6;
   background-color: #2E8B57;
@@ -47,7 +46,7 @@
 }
  
 @media screen and (min-width: 800px) {
-  #main-aside-wrapper  header {
+  #main-aside-wrapper header {
     flex: 1;
     order: 1;
     justify-content: space-between;
@@ -58,22 +57,22 @@
     background-position: right;
     background-size: auto;
   }
-  #main-aside-wrapper  main {
+  #main-aside-wrapper main {
     flex: 1;
-    order: 3;
+    order: 2;
     justify-content: center;
     display: flex;
   }
   #main-aside-wrapper aside {
     flex: 3;
     order: 4;
-    line-height: 120%
+    
   }
   .grid {
  display: grid;
- grid: 1fr 20% 30px / 30% 1fr;
+ grid: 1fr 20% 40px / 40% 1fr;
  height: 200px;
- background-color: #7FFFD4;
+ background-color: aliceblue;
 }
 }
 
@@ -81,7 +80,7 @@
 border-radius:100px;
 width: 100px;
 height: 100px;
-margin-top: 0px;
+  margin-top: 0px;
 margin-inline: 20px;
 margin-block: 20px;
 float: left;
@@ -89,20 +88,20 @@ float: left;
 
 div.heads { 
   width: 65%;
-  height: 40px;
+  height: 50px;
   font-size: 20px;
-  background-color: #2E8B57;
-  border-radius: 12px;
+  background-color:#3CB371;
+  border-radius: 14px;
   display: flex;
   margin-block: auto;
 }
 
 tr:nth-child(odd) {
-  background-color: #B0C4DE;
+  background-color: #FFA07A;
 }
 
 tr:nth-child(even) {
-  background-color: #FFA07A;
+  background-color: #AFEEEE;
 }
 #fonsa{
   background: url(fon.jpg); 
