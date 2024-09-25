@@ -58,13 +58,13 @@
     background-position: right;
     background-size: auto;
   }
-  #osnova ssyl {
+  #osnova ssul {
     flex: 1;
     order: 3;
     justify-content: center;
     display: flex;
   }
-  #osnova form {
+  #osnova forma {
     flex: 3;
     order: 4;
     line-height: 120%
