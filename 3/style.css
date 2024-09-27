@@ -2,8 +2,8 @@
   display: flex;
   flex-direction: column;
 }
-#osnova section, #osnova nav,
-#osnova main, #osnova aside {
+#osnova sforma, #osnova nav,
+#osnova ssul, #osnova tabbl {
   justify-content: center;
   display: flex;
   background-color: #98FB98;
@@ -25,11 +25,11 @@
   text-transform: uppercase;
   letter-spacing: .2em;
   }
-#osnova main {
+#osnova ssul {
   flex: 1;
   order: 3;
 }
-#osnova aside {
+#osnova tabbl {
   flex: 3;
   order: 4;
   font-size: 12pt;
@@ -38,7 +38,7 @@
   font-style: italic;
   line-height: 120%
 }
-#osnova section {
+#osnova sforma {
   flex: 3;
   order: 5;
 }
@@ -62,13 +62,13 @@
     background-position: right;
     background-size: auto;
   }
-  #osnova main {
+  #osnova ssul {
     flex: 1;
     order: 2;
     justify-content: center;
     display: flex;
   }
-  #osnova aside {
+  #osnova tabbl {
     flex: 3;
     order: 4;
     
