@@ -9,7 +9,7 @@
   background-color: #90EE90;
   margin: 10px; 
   padding: 10px;
-  word-break: break-all;
+  word-wrap: break-word;
 }
 #osnova header {
   flex: 1;
