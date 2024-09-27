@@ -30,27 +30,25 @@
   order: 3;
 }
 #osnova tabbl {
-  flex: 3;
+  flex: 1;
   order: 4;
-  font-size: 12pt;
-  font-family: "Courier New", monotype;
-  font-weight: bold;
-  font-style: italic;
+  font-face="arial";
+  font-size="14";
   line-height: 120%
 }
 #osnova sforma {
-  flex: 3;
+  flex: 1;
   order: 5;
 }
 #osnova footer {
-  flex: 3;
+  flex: 1;
   order: 6;
   background-color: #3CB371;
   padding-left: 70px;
   padding-block: 10px;
 }
  
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   #osnova header {
     flex: 1;
     order: 1;
@@ -69,15 +67,15 @@
     display: flex;
   }
   #osnova tabbl {
-    flex: 3;
-    order: 4;
+    flex: 1;
+    order: 3;
     
   }
-  .grid {
+  .zakk {
  display: grid;
  grid: 1fr 20% 40px / 40% 1fr;
  height: 200px;
- background-color: aliceblue;
+ background-color: #9ACD32;
 }
 }
 
