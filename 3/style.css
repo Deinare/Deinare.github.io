@@ -32,7 +32,6 @@
 #osnova tabbl {
   flex: 1;
   order: 4;
-  font-face="arial";
   font-size="14";
   line-height: 120%
 }
