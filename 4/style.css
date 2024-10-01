@@ -1,0 +1,116 @@
+#osnova {
+  display: flex;
+  flex-direction: column;
+}
+#osnova sforma, #osnova nav,
+#osnova ssul, #osnova tabbl {
+  justify-content: center;
+  display: flex;
+  background-color: #90EE90;
+  white-space: normal
+  margin: 10px; 
+  padding: 10px;
+ 
+}
+#osnova header {
+  flex: 1;
+  order: 1;
+  display: flex;
+  background-color:#3CB371;
+  background-position: center;
+  background-size: auto;
+}
+#osnova nav {
+  justify-content: space-around;
+  display: flex;
+  order: 2;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  }
+#osnova ssul {
+  flex: 1;
+  order: 3;
+}
+#osnova tabbl {
+  flex: 1;
+  order: 4;
+  font-size="14";
+  line-height: 120%
+}
+#osnova sforma {
+  flex: 1;
+  order: 5;
+}
+#osnova footer {
+  flex: 1;
+  order: 6;
+  background-color: #3CB371;
+  padding-left: 70px;
+  padding-block: 10px;
+}
+ 
+@media screen and (min-width: 600px) {
+  #osnova header {
+    flex: 1;
+    order: 1;
+    justify-content: space-between;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+    background-color:#3CB371;
+    background-position: right;
+    background-size: auto;
+  }
+  #osnova ssul {
+    flex: 1;
+    order: 2;
+    justify-content: center;
+    display: flex;
+  }
+  #osnova tabbl {
+    flex: 1;
+    order: 3;
+    
+  }
+  .zakk {
+ display: grid;
+ grid: 1fr 20% 40px / 40% 1fr;
+ height: 200px;
+ background-color: #9ACD32;
+}
+}
+
+#logotip {
+border-radius:100px;
+width: 100px;
+height: 100px;
+  margin-top: 0px;
+margin-inline: 20px;
+margin-block: 20px;
+float: left;
+}
+
+div.heads { 
+  width: 65%;
+  height: 50px;
+  font-size: 20px;
+  background-color:#3CB371;
+  border-radius: 14px;
+  display: flex;
+  margin-block: auto;
+}
+
+tr:nth-child(odd) {
+  background-color: #FFA07A;
+}
+
+tr:nth-child(even) {
+  background-color: #AFEEEE;
+}
+#fonsa{
+  background: url(fon.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+}
