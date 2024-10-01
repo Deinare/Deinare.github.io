@@ -1,6 +1,11 @@
 .zel{
 background: #2E8B57;
 }
+nav{
+  background-color:#98FB98;
+  float:right; 
+  padding:20px;
+}
 div.ser
 {
 width:960px; 
