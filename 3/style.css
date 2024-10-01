@@ -50,6 +50,16 @@
 }
  
 @media screen and (min-width: 600px) {
+#osnova sforma,
+#osnova ssul, #osnova tabbl {
+  justify-content: center;
+  display: flex;
+  background-color: #90EE90;
+  white-space: normal
+  margin: 200px; 
+  padding: 10px;
+ 
+}
   #osnova header {
     flex: 1;
     order: 1;
