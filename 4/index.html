@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cайт</title>
+	<link rel="stylesheet" href="style.css" media="screen">
+	<link rel="stylesheet" href="style.css">
+</head>
+	
+<body id="fonsa"> 
+	<div id="osnova">
+	<div class="zakk">
+	<header>
+		<img id="logotip" src="image.png"  alt="картинка">	
+	<div class="heads">
+		<h2 style="margin: auto;">задание 3</h2>
+	</div>
+	</header>
+		
+	<nav>
+		<h2 style="margin: auto; display: flex; justify-content: space-between; flex: 1;">
+		<a  href="#table" title="table">Таблица</a>|
+		<a  href="#ssyl" title="down">Ссылки</a>|
+		<a  href="#form" title="form">Форма</a></h2>
+	</nav>
+	</div>
+	
+	
+	
+
+	<ssul>
+		<div id="ssyl"> </div>
+	<h2 align="center">Ссылки</h2><br>
+	<ul>
+	<li> <a id="up" href = "https://www.kubsu.ru/index.php" title="Главная страница сайта КубГУ"> 1. Абсолютная гиперссылка </a> </li>
+	<li> <a href="https://www.kubsu.ru/" title="Начальная страница сайта КубГУ"> 2. Абсолютная гиперссылка протоколе https </a> </li>
+	<li><a href="https://yandex.ru/images/search?from=tabbar&text=цветы" title="Цветы"><img src="https://Deinare.github.io/image.jpg" width="300" alt="Цветок"></a>  </li>
+        <li> <a href="/inside.html"> 4. Сокращённая ссылка на внутреннюю страницу </a> </li>
+	<li> <a href="#down" title="вниз"> 6. Ссылка на фрагмент текущей страницы </a> </li>
+        <li> <a href="/inside.html?file=inside&catalog=3&type=html" title="внутренняя страница"> 7. Ссылка с тремя параметрами в URL </a> </li>
+        <li> <a href="inside.html?id=150"> 8. Ссылка с параметром id в URL </a> </li>
+        <li> <a href="./inside.html" title="внутренняя страница"> 9. Относительная ссылка на страницу в текущем каталоге </a> </li>
+        <li> <a href="./about/vnytr.html"> 10. Относительная ссылка на страницу в каталоге about </a> </li>
+        <li> 13. Контекстная <a href="https://ru.wikipedia.org/wiki/Компьютер"> ссылка </a> в тексте абзаца </li>
+        <li> <a href="https://ru.wikipedia.org/wiki/Компьютер#История_терминологии" title="компьютер, история терминологии"> 14. Ссылка на фрагмент страницы стороннего сайта </a> </li>
+        <li> 15. Ссылки из прямоугольных и круглых областей картинки <br> <img src="https://Deinare.github.io/image.jpg"  width="400" usemap="#Flower" alt="Цветок">
+            <map name="Flower">
+                <area shape="circle" coords="200,140,50" alt="круг" href="https://ru.wikipedia.org/wiki/Цветок">
+                <area shape="rect" coords="350,0,400,400" alt="прямоугольник" href="https://ru.wikipedia.org/wiki/Лист">
+            </map>
+        </li>
+        <li> <a href="" > 16. Ссылка с пустым href </a> </li>
+        <li> <a title="Не ссылка"> 17. Ссылка без href </a> </li>
+        <li> <a href="inside.html" title="inside страница" rel="nofollow"> 18. Ссылка, по которой запрещён переход поисковикам </a> </li>
+        <li>
+		<!-- <noindex> -->
+                	<a href="inside.html" title="noindex"> 19. Запрещённая ссылка для индексации поисковиками </a>
+          <!-- </noindex> -->
+        </li>
+        <li> 20. Нумерованный список ссылок с подписями title
+            <ol>
+                <li> <a href="https://ru.wikipedia.org/wiki/Т-34" title="Танк Т-34"> Ссылка на википедию </a> </li>
+                <li> <a href="https://www.wildberries.ru/" title="Wildberries"> Wildberies </a> </li>
+            </ol>
+        </li>
+</ul>
+	
+	</ssul>
+	
+	
+	<tabbl>
+		<div id="table"> </div>	 
+		<h2 align="center">Таблица</h2><br>
+<table border 1px black; border-collapse: collapse;>
+<style>
+table{
+background: black;
+}
+</style>
+<tr>
+       		 <th>Колонка 1</th>
+       		 <th>Колонка 2</th>
+ 		 <th>Колонка 3</th>
+		 <th>Колонка 4</th>
+ </tr>
+
+     	 </tr>
+	<tr>
+   	     <td colspan="2">Ячейка 11-12</td>
+	     <td> Ячейка 13</td>
+	     <td> Ячейка 14</td>
+   	   </tr>
+   	   <tr>
+		
+   	    	 <td>Ячейка 21</td>
+       		 <td>Ячейка 22</td>
+		 <td>Ячейка 23</td>
+		 <td>Ячейка 24</td>
+
+     	 </tr>
+<tr>
+   	    	 <td>Ячейка 31</td>
+       		 <td>Ячейка 32</td>
+		 <td colspan="2">Ячейка 33-34</td>
+		
+     	 </tr>
+<tr >
+   	    	 <td>Ячейка 41</td>
+       		 <td>Ячейка 42</td>
+   	    	 <td>Ячейка 43</td>
+       		 <td>Ячейка 44</td>
+     	 </tr>
+<tr>
+   	    	 <td>Ячейка 51</td>
+       		 <td>Ячейка 52</td>
+   	    	 <td>Ячейка 53</td>
+       		 <td>Ячейка 54</td>
+     	 </tr>
+<tr>
+   	    	 <td>Ячейка 61</td>
+       		 <td>Ячейка 62</td>
+   	    	 <td>Ячейка 63</td>
+       		 <td>Ячейка 64</td>
+     	 </tr>
+
+  	  </table>
+	
+	</tabbl>
+	
+ 
+	
+	<sforma>
+		<div id="form"> </div>
+	<form action="/" method="POST">
+		<h2 align="center">Форма</h2>
+	<label>
+	         ФИО:<br>
+	        <input name="field-name" placeholder="Иванов Иван Иванович">
+      	</label> <br>
+  	<label>
+        	номер телефона:<br>
+        	<input name="field-tel" type="tel" placeholder="Ваш номер телефона">
+      	</label><br>
+
+	<label>
+        	email:<br>
+        	<input name="field-email" type="email" placeholder="Ваш email">
+      	</label><br>
+  <label>
+        	Выберите дату рождения:<br>
+        	<input name="field-data" value="2000-01-01" type="date">
+      	</label><br>
+
+ Пол:<br />
+      	<label>
+		<input type="radio" checked="checked" name="group-1" value="Значение1">
+        Муж
+	</label>
+      	<label>
+		<input type="radio" name="group-1" value="Значение2">
+        Жен
+	</label><br>
+	<label>
+        	Ваш ллюбимый язык программирования?: <br>
+        	<select name="field-name[]"
+		          multiple="multiple">
+		          <option value="1">Pascal</option>
+		          <option value="2" selected="selected">C</option>
+		          <option value="3" selected="selected">C++</option>
+			  <option value="4" selected="selected">JavaScript</option>
+			  <option value="5" selected="selected">PHP</option>
+			  <option value="6" selected="selected">Java</option>
+			  <option value="7" selected="selected">Python</option>
+			  <option value="8" selected="selected">Haskel</option>
+			  <option value="9" selected="selected">Clojure</option>
+			  <option value="10" selected="selected">Prolog</option>
+			  <option value="11" selected="selected">Scala</option>
+        	</select>
+      	</label><br>
+
+	<label>
+        	Ваша биография:<br>
+        	<textarea name="field-name" placeholder="Чем увлекаетесь, где работаете и т.д."></textarea>
+      	</label><br>
+
+С контрактом:<br>
+      	<label><input type="checkbox" checked="checked" name="check-1">
+        Ознакомлен(а)
+	</label><br>
+
+	<input type="submit" value="Сохранить">
+
+	</form>
+	</sforma>
+	
+	<div id="down"> </div>
+		
+	<footer>
+		(c) Юлия Аносова
+	</footer>
+		
+	</div>
+</body>
+</html>
