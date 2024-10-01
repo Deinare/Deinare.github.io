@@ -25,3 +25,8 @@ padding-top: 10px;
  padding-bottom: 10px;
 
 }
+table{
+border: 1px black; 
+border-collapse: collapse;
+background: black;
+}
