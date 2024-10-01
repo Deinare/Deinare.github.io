@@ -24,7 +24,7 @@
   justify-content: space-around;
   display: flex;
   order: 2;
-  text-transform: uppercase;
+  text-transform: lowercase;
   letter-spacing: .2em;
   }
 #osnova ssul {
