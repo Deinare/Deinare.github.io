@@ -3,13 +3,17 @@
 <head>
 	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cайт</title>
+	<link rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="style.css" media="screen">
 	<link rel="stylesheet" href="style.css">
 </head>
+
 	
 <body id="fonsa"> 
 	<div id="osnova">
-	<div class="zakk">
+		<div class="container">
+		<div class="zakk">
 	<header>
 		<img id="logotip" src="image.png"  alt="картинка">	
 	<div class="heads">
@@ -17,18 +21,18 @@
 	</div>
 	</header>
 		
-	<nav>
+	<nav class="navbar navbar-light bg-light">
 		<h2 style="margin: auto; display: flex; justify-content: space-between; flex: 1;">
 		<a  href="#table" title="table">Таблица</a>|
 		<a  href="#ssyl" title="down">Ссылки</a>|
 		<a  href="#form" title="form">Форма</a></h2>
 	</nav>
 	</div>
+	</div>
 	
 	
-	
-
-	<ssul>
+	<div class="container">
+	<ssul class="my-1">
 		<div id="ssyl"> </div>
 	<h2 align="center">Ссылки</h2><br>
 	<ul>
@@ -66,17 +70,14 @@
 </ul>
 	
 	</ssul>
-	
-	
+	</div>
+
+
+		<div class="container">
 	<tabbl>
 		<div id="table"> </div>	 
 		<h2 align="center">Таблица</h2><br>
-<table border 1px black; border-collapse: collapse;>
-<style>
-table{
-background: black;
-}
-</style>
+<table class="table table-bordered">
 <tr>
        		 <th>Колонка 1</th>
        		 <th>Колонка 2</th>
@@ -126,10 +127,10 @@ background: black;
   	  </table>
 	
 	</tabbl>
-	
+		</div>
  
-	
-	<sforma>
+	<div class="container">
+	<sforma class="my-1">
 		<div id="form"> </div>
 	<form action="/" method="POST">
 		<h2 align="center">Форма</h2>
@@ -192,10 +193,11 @@ background: black;
 
 	</form>
 	</sforma>
-	
+	</div>
+		
 	<div id="down"> </div>
 		
-	<footer>
+	<footer class="my-1">
 		(c) Юлия Аносова
 	</footer>
 		
