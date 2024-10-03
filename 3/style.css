@@ -122,3 +122,8 @@ tr:nth-child(even) {
   background-position: center;
   background-attachment: fixed; 
 }
+table{
+background: black;
+border 1px black;
+border-collapse: collapse;
+}
