@@ -7,7 +7,7 @@
   justify-content: center;
   display: flex;
   background-color: #90EE90;
-  white-space: normal
+ overflow-y: hidden;
   margin: 10px; 
   padding: 10px;
  
