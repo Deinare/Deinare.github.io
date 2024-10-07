@@ -1,6 +1,6 @@
 function resultat(event) {
-  let f1 = document.getElementByName("product");
-  let f2 = document.getElementByName("kol");
-  let f2 = document.getElementByName("result");
-  return f1.value*f2.value;
+  let f1 = document.getElementsByName("product");
+  let f2 = document.getElementsByName("kol");
+  let f2 = document.getElementsByName("result");
+  return f1[0].value*f2[0].value;
 }
