@@ -1,14 +1,22 @@
-function click1() {
-  let f1 = document.getElementsByName("product");
-  let f2 = document.getElementsByName("kol");
-  let r = document.getElementById("result");
-  r = f1[0].value * f2[0].value;
-  if(isNaN(r))
-  {
-    alert("ошибка");
-    return false;
-  }
-  
-    r.inner;
-  return false;
-}
+window.addEventListener("DOMContentLoaded", function () {
+
+
+    let kol = document.getElementById("kol");
+    let product = document.getElementById("vybor");
+    let calcButton = document.getElementById("itog");
+    let result = document.getElementById("resultat");
+
+
+    const znachenie =
+        { "1": 1000, "2": 1540, "3": 25000, "4": 12500, "5": 999, "6": 560 };
+
+    calcButton.addEventListener("click", function () {
+        let kolt = kol.value;
+        if (kolt.match(/^\d+$/) !== null) {
+            let res = znachenie[product.value] * kolt;
+            result.innerText = res;
+        } else {
+            result.innerText = "Некорректный ввод количества, пожалуйста, напишите число!";
+        }
+    });
+});
