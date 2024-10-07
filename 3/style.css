@@ -1,117 +1,243 @@
-#main-aside-wrapper {
-  display: flex;
-  flex-direction: column;
+body {
+    margin: 0;
+    background: url(fon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
 }
-#main-aside-wrapper section, #main-aside-wrapper nav,
-#main-aside-wrapper main, #main-aside-wrapper aside {
-  justify-content: center;
-  display: flex;
-  background-color: #90EE90;
-  margin: 10px; 
-  padding: 10px;
-}
-#main-aside-wrapper header {
-  flex: 1;
-  order: 1;
-  display: flex; 
-  background-color:#2E8B57; 
-}
-#main-aside-wrapper nav {
-  justify-content: space-around;
-  display: flex;
-  order: 2;
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  }
-#main-aside-wrapper main {
-  flex: 2;
-  order: 4;
-}
-#main-aside-wrapper aside {
-  flex: 3;
-  order: 3;
-  font-size: 12pt;
-  line-height: 120%
-}
-#main-aside-wrapper section {
-  flex: 3;
-  order: 5;
-}
- @media screen and (min-width: 800px) {
-  #main-aside-wrapper header {
-    flex: 1;
-    order: 1;
-    justify-content: space-between;
+
+header {
     display: flex;
-    margin: 10px;
-    padding: 10px;
-    background-color:#2E8B57; 
-  }
-  #main-aside-wrapper main {
-    flex: 1;
-    order: 3;
-    justify-content: center;
-    display: flex;
-  }
-  #main-aside-wrapper aside {
-    flex: 3;
-    order: 4;
-    font-size: 12pt;
-    font-family: "Courier New", monotype;
-    font-weight: bold;
-    font-style: italic;
-    line-height: 120%
-  }
-  .zakk {
- display: grid;
- grid: 1fr 20% 40px / 40% 1fr;
- height: 200px;
-}
-}
- footer {
-    flex: 1;
-    order: 6;
+    flex-direction: row;
     background-color: #3CB371;
-    padding-left: 70px;
-    padding-block: 10px;
+    order: 1;
 }
 
-#logotip {
-border-radius:100px;
-width: 100px;
-height: 100px;
-  margin-top: 0px;
-margin-inline: 20px;
-margin-block: 20px;
-float: left;
+.block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-div.heads { 
-  width: 65%;
-  height: 50px;
-  font-size: 20px;
-  background-color:#3CB371;
-  border-radius: 14px;
-  display: flex;
-  margin-block: auto;
+    .block> * {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        align-items: center;
+        background-color: #90EE90;
+        border: solid;
+        border-color: yellow;
+        width:80%;
+    }
+
+.logotip {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    margin-top: 0px;
+    margin-inline: 20px;
+    margin-block: 20px;
+    float: left;
 }
 
-tr:nth-child(odd) {
-  background-color: #FFA07A;
+.navtel{
+    display: flex;
+    flex-direction: row;
+    order: 1;
+    align-items: center;
+    
+}
+.navdesk {
+    display: none;
 }
 
-tr:nth-child(even) {
-  background-color: #AFEEEE;
+.nasvan{
+    display: flex;
+    flex-direction: row;
+    flex:1;
+    order: 2;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left:20%;
+    font-size: 40px;
+    
+    text-decoration: none;
 }
-#fonsa{
-  background: url(fon.jpg); 
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed; 
+
+.navhref{
+    text-decoration: none;
+    font-size: 46px;
+    margin-left: 5%;
+    width:33%;
+   
 }
-table{
-background: black;
-border 1px black;
-border-collapse: collapse;
+
+.ssul {
+    order:3;
+}
+
+.tabbl {
+    flex: none;
+    order:4;
+}
+
+table {
+    margin-top: 40px;
+    margin-right: 5%;
+    margin-left: 5%;
+    margin-bottom: 40px;
+    width: 90%;
+    height: 280px;
+    border: solid;
+    border-color: #1E90FF;
+    border-spacing: 0px;
+}
+
+label {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+    order: 5;
+    border: solid;
+    background-color: #90EE90;
+    
+}
+
+@media screen and (min-width: 1024px) {
+
+    body {
+        margin: 0;
+        background: url(fon.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        background-color: #00FF7F;
+        order: 1;
+        border-bottom: solid;
+        border-bottom-color: black;
+        margin-bottom: 20px;
+        height: 100px;
+    }
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .block > * {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            align-items: center;
+            background-color: #00FF7F;
+            border: solid;
+            border-color: #FFFF00;
+            max-width: 960px;
+            min-width: 960px;
+        }
+
+    .logoblock {
+        display: flex;
+        margin: 10px;
+        order: 1;
+        flex-direction: row;
+        flex: none;
+        border-radius: 50%;
+        width: 130px;
+        height: 130px;
+        align-self: center;
+    }
+
+    .navdesk {
+        display: flex;
+        flex: 3;
+        flex-direction: row;
+        border: solid;
+        border-color: black;
+        vertical-align: middle;
+        order: 3;
+        margin-left:25%;
+        max-height: 60px;
+        max-width: 800px;
+    }
+    .navtel {
+        display: none;
+    }
+
+    .nasvan {
+        display: flex;
+        flex-direction: row;
+        margin-top: 26px;
+        margin-left:120px;
+        flex: none;
+        order: 2;
+        font-size: 40px;
+        text-decoration: none;
+    }
+
+    .navhref {
+        display: flex;
+        flex: auto;
+        margin-left: 70px;
+        margin-top: 0;
+        text-decoration: none;
+        font-size: 46px;
+
+    }
+
+    .ssul {
+        order: 3;
+    }
+
+    .tabble {
+        flex: none;
+        order: 4;
+    }
+    table {
+        margin-top: 40px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 40px;
+        width: 780px;
+        height: 280px;
+        border: solid;
+        border-color: black;
+    }
+
+    form {
+        order: 5;
+        border: solid;
+        background-color: #264d8f;
+    }
+}
+     footer {
+        flex: 1;
+        order: 6;
+        background-color: #3CB371;
+        padding-left: 70px;
+        padding-block: 40px;
+    }
+    tr:nth-child(odd) {
+        background-color: #FFA07A;  
+    }
+
+    tr:nth-child(even) {
+        background-color: #AFEEEE;      
+    }
+.h11 {
+    font-size: 2em;
 }
