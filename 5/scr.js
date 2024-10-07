@@ -1,4 +1,4 @@
-function result() {
+function result(event) {
   let f1 = document.getElementsByName("select1");
   let f2 = document.getElementsByName("kol");
   if (select1==v1)
@@ -12,3 +12,8 @@ function result() {
   if (select1==v5)
     return kol*136
 }
+window.addEventListener('DOMContentLoaded', function (event) {
+  console.log("DOM fully loaded and parsed");
+  let b = document.getElementById("my-button");
+  b.addEventListener(b, result);
+});
