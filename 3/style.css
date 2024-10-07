@@ -6,7 +6,7 @@
 #main-aside-wrapper main, #main-aside-wrapper aside {
   justify-content: center;
   display: flex;
-  background-color: #ddd;
+  background-color: #90EE90;
   margin: 10px; 
   padding: 10px;
 }
@@ -31,28 +31,13 @@
   flex: 3;
   order: 3;
   font-size: 12pt;
-  font-family: "Courier New", monotype;
-  font-weight: bold;
-  font-style: italic;
   line-height: 120%
 }
 #main-aside-wrapper section {
   flex: 3;
   order: 5;
 }
-#main-aside-wrapper footer {
-  flex: 3;
-  order: 6;
-  background-color: #7474d1;
-  padding-left: 70px;
-  padding-block: 10px;
-  border-block-style: solid;
-  border-block-width: 3px;
-  border-inline-width: 3px;
-  border-inline-style: solid;
-}
- 
-@media screen and (min-width: 800px) {
+ @media screen and (min-width: 800px) {
   #main-aside-wrapper header {
     flex: 1;
     order: 1;
@@ -82,6 +67,13 @@
  grid: 1fr 20% 40px / 40% 1fr;
  height: 200px;
 }
+}
+ footer {
+    flex: 1;
+    order: 6;
+    background-color: #3CB371;
+    padding-left: 70px;
+    padding-block: 10px;
 }
 
 #logotip {
