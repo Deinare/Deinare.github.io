@@ -1,9 +1,14 @@
-function click1() {
-  let f1 = document.getElementsByName("field1");
-  let f2 = document.getElementsByName("field2");
-  let r = document.getElementById("result");
-  r.innerHTML = f1[0].value + f2[0].value;
-  let s = document.getElementsByName("select1");
-  console.log(s[0].value);
-  return false;
+function result() {
+  let f1 = document.getElementsByName("select1");
+  let f2 = document.getElementsByName("kol");
+  if (select1==v1)
+    return kol*200;
+  if (select1==v2)
+    return kol*150;
+  if (select1==v3)
+    return kol*1200;
+  if (select1==v4)
+    return kol*220;
+  if (select1==v5)
+    return kol*136
 }
