@@ -1,20 +1,33 @@
 <!DOCTYPE html>
+
 <html lang="ru">
-  <head>
-     <title> Задание 5</title>
-    <script defer src="scr.js"></script>
-  </head>
-<body>
-  <h1>задание 5</h1>
-<form>
-  <select name="product">
-    <option value="120">Мяч</option>
-    <option value="100">Ракетка</option>
-     <option value="50">Волан</option>
-    <option value="300">Скакалка</option>
-  </select>
-  <input name="kol">
-  <button onclick="return click1();">Рассчитать</button>
-   <div id="result"></div>
-</form>
-</body>
+    <head>
+        <title> Задание 5 </title>
+        <script defer src="calc.js"></script>
+    </head>
+
+    <body style="display: flex; flex-direction: column;">
+        <h1 style="margin-left: auto; margin-right: auto;">Задание 5</h1>
+        <div style="margin-left: auto; margin-right: auto; width: 40%; background-color: #FFD700; border: inset; border-color: #FF4500; ">
+          
+            <h3 align="center">Выберете предмет:</h3>
+            <select id="vybor" style="display: flex; margin-left: auto; margin-right: auto; margin-top: 15px;">
+                <option value="1">Стул</option>
+                <option value="2">Стол</option>
+                <option value="3">Диван</option>
+                <option value="4">Кровать</option>
+                <option value="5">Ковер</option>
+                <option value="6">Лампа</option>
+            </select>
+          
+            <h3 align="center">Укажите количество:</h3>
+            <input id="kol" placeholder="Количество предметов" style="display: flex; margin-left: auto; margin-right: auto; margin-top: 15px;">
+            <button id="itog" style="display: flex; order: 2; margin-left: auto; margin-top: 20px; margin-right: auto; "> Посчитать стоимость </button>
+
+            <div style="display: flex; flex-direction: column;">
+                <h3 align="center"> Результат: </h3>
+                <div id="resultat" align="center" style="background-color: white; margin-bottom: 10px; margin-right: 130px; margin-left: 130px; "></div>
+            </div>
+        </div>
+    </body>
+</html>
