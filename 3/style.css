@@ -1,9 +1,9 @@
-#osnova {
+#main-aside-wrapper {
   display: flex;
   flex-direction: column;
 }
-#osnova .sforma, #osnova nav,
-#osnova .ssul, #osnova .tabbl {
+#main-aside-wrapper section, #main-aside-wrapper nav,
+#main-aside-wrapper main, #main-aside-wrapper aside  {
   justify-content: center;
   display: flex;
   background-color: #90EE90;
@@ -11,7 +11,7 @@
   padding: 10px;
  
 }
-#osnova .header {
+#main-aside-wrapper header {
   flex: 1;
   order: 1;
   display: flex;
@@ -19,28 +19,28 @@
   background-position: center;
   background-size: auto;
 }
-#osnova nav {
+#main-aside-wrapper nav {
   justify-content: space-around;
   display: flex;
   order: 2;
   text-transform: lowercase;
   letter-spacing: .2em;
   }
-#osnova .ssul {
+#main-aside-wrapper main {
   flex: 1;
   order: 3;
 }
-#osnova .tabbl {
+#main-aside-wrapper aside  {
   flex: 1;
   order: 4;
   font-size="14";
   line-height: 120%
 }
-#osnova .sforma {
+#main-aside-wrapper section {
   flex: 1;
   order: 5;
 }
-#osnova footer {
+#main-aside-wrapper footer {
   flex: 1;
   order: 6;
   background-color: #3CB371;
@@ -49,8 +49,8 @@
 }
  
 @media screen and (min-width: 600px) {
-#osnova .sforma,
-#osnova .ssul, #osnova .tabbl {
+#main-aside-wrapper section,
+#main-aside-wrapper main, #main-aside-wrapper aside  {
   justify-content: center;
   display: flex;
   background-color: #90EE90;
@@ -59,7 +59,7 @@
   padding: 10px;
  
 }
-  #osnova header {
+  #main-aside-wrapper header {
     flex: 1;
     order: 1;
     justify-content: space-between;
@@ -70,13 +70,13 @@
     background-position: right;
     background-size: auto;
   }
-  #osnova .ssul {
+  #main-aside-wrapper main {
     flex: 1;
     order: 2;
     justify-content: center;
     display: flex;
   }
-  #osnova .tabbl {
+  #main-aside-wrapper aside  {
     flex: 1;
     order: 3;
     
