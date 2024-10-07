@@ -3,5 +3,5 @@ function click1() {
   let f2 = document.getElementsByName("kol");
   let r = document.getElementById("result");
   r.innerHTML = f1[0].value * f2[0].value;
-  
+  return false;
 }
