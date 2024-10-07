@@ -14,9 +14,7 @@
   flex: 1;
   order: 1;
   display: flex; 
-  background-image: url(https://nik125y.github.io/foto/imageH.png);
-  background-position: center;
-  background-size: auto;
+  background-color:#2E8B57; 
 }
 #main-aside-wrapper nav {
   justify-content: space-around;
@@ -62,9 +60,7 @@
     display: flex;
     margin: 10px;
     padding: 10px;
-    background-image: url(https://nik125y.github.io/foto/imageH.png);
-    background-position: right;
-    background-size: auto;
+    background-color:#2E8B57; 
   }
   #main-aside-wrapper main {
     flex: 1;
