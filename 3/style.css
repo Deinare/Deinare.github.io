@@ -3,19 +3,18 @@
   flex-direction: column;
 }
 #main-aside-wrapper section, #main-aside-wrapper nav,
-#main-aside-wrapper main, #main-aside-wrapper aside  {
+#main-aside-wrapper main, #main-aside-wrapper aside {
   justify-content: center;
   display: flex;
-  background-color: #90EE90;
+  background-color: #ddd;
   margin: 10px; 
   padding: 10px;
- 
 }
 #main-aside-wrapper header {
   flex: 1;
   order: 1;
-  display: flex;
-  background-color:#3CB371;
+  display: flex; 
+  background-image: url(https://nik125y.github.io/foto/imageH.png);
   background-position: center;
   background-size: auto;
 }
@@ -23,42 +22,39 @@
   justify-content: space-around;
   display: flex;
   order: 2;
-  text-transform: lowercase;
+  text-transform: uppercase;
   letter-spacing: .2em;
   }
 #main-aside-wrapper main {
-  flex: 1;
-  order: 3;
-}
-#main-aside-wrapper aside  {
-  flex: 1;
+  flex: 2;
   order: 4;
-  font-size="14";
+}
+#main-aside-wrapper aside {
+  flex: 3;
+  order: 3;
+  font-size: 12pt;
+  font-family: "Courier New", monotype;
+  font-weight: bold;
+  font-style: italic;
   line-height: 120%
 }
 #main-aside-wrapper section {
-  flex: 1;
+  flex: 3;
   order: 5;
 }
 #main-aside-wrapper footer {
-  flex: 1;
+  flex: 3;
   order: 6;
-  background-color: #3CB371;
+  background-color: #7474d1;
   padding-left: 70px;
   padding-block: 10px;
+  border-block-style: solid;
+  border-block-width: 3px;
+  border-inline-width: 3px;
+  border-inline-style: solid;
 }
  
-@media screen and (min-width: 600px) {
-#main-aside-wrapper section,
-#main-aside-wrapper main, #main-aside-wrapper aside  {
-  justify-content: center;
-  display: flex;
-  background-color: #90EE90;
-  white-space: normal
-  margin: 200px; 
-  padding: 10px;
- 
-}
+@media screen and (min-width: 800px) {
   #main-aside-wrapper header {
     flex: 1;
     order: 1;
@@ -66,20 +62,24 @@
     display: flex;
     margin: 10px;
     padding: 10px;
-    background-color:#3CB371;
+    background-image: url(https://nik125y.github.io/foto/imageH.png);
     background-position: right;
     background-size: auto;
   }
   #main-aside-wrapper main {
     flex: 1;
-    order: 2;
+    order: 3;
     justify-content: center;
     display: flex;
   }
-  #main-aside-wrapper aside  {
-    flex: 1;
-    order: 3;
-    
+  #main-aside-wrapper aside {
+    flex: 3;
+    order: 4;
+    font-size: 12pt;
+    font-family: "Courier New", monotype;
+    font-weight: bold;
+    font-style: italic;
+    line-height: 120%
   }
   .zakk {
  display: grid;
