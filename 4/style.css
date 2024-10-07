@@ -92,6 +92,7 @@ float: left;
 
 div.heads { 
   width: 65%;
+  margin-top: 45;
   height: 50px;
   font-size: 20px;
   background-color:#3CB371;
