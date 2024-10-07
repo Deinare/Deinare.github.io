@@ -1,4 +1,4 @@
-function resultat(event) {
+function resultat() {
   let f1 = document.getElementsByName("product");
   let f2 = document.getElementsByName("kol");
   let res = document.getElementsByName("result");
