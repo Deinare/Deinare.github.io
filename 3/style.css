@@ -172,6 +172,8 @@ form {
         vertical-align: middle;
         order: 3;
         right:0px;
+        max-height: 60px;
+        max-width: 600px;
         
         
     }
