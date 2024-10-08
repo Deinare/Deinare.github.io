@@ -152,13 +152,12 @@ form {
         }
 
     .logotip {
-        border-radius: 100px;
+        border-radius: 130px;
         display: flex;
         margin: 10px;
         order: 1;
         flex-direction: row;
         flex: none;
-        border-radius: 50%;
         width: 130px;
         height: 130px;
         align-self: center;
