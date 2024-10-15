@@ -77,12 +77,12 @@ header {
 }
 
 .ssul {
-    order:3;
+    order:4;
 }
 
 .tabbl {
     flex: none;
-    order:4;
+    order:3;
 }
 
 table {
