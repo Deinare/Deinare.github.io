@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+    <title> Задание 6 </title>
+    <script defer src="scr.js"></script>
+</head>
+
+<body style="display: flex; flex-direction: column;">
+    <h1 style="margin-left: auto; margin-right: auto;">  Задание 6 </h1>
+    <div style="margin-left: auto; margin-right: auto; width: 35%; background-color: #FFD700; border: inset; border-color: #FF4500; ">
+        <h3 align="center">Выберете предмет:</h3>
+        <select id="vybor" style="display: flex; margin-left: auto; margin-right: auto; margin-top: 15px;">
+            <option value="1">Стул</option>
+            <option value="2">Стол</option>
+            <option value="3">Диван</option>
+            <option value="4">Кровать</option>
+            <option value="5">Ковер</option>
+            <option value="6">Лампа</option>
+        </select>
+        <h3 align="center">Введите количество предметов:</h3>
+        <input id="kol" placeholder="Количество" style="display: flex; margin-left: auto; margin-right: auto; margin-top: 10px;">
+        <div id="service" style="display: flex; flex-direction: column;">
+            <h3 align="center">Выберете услугу:</h3>
+            <div style="display: flex; flex-direction: column;  margin-left: auto; margin-right: auto;">
+                <label style="display: flex;">
+                    <input type="radio" name="ys" value="delivery">
+                    Доставка
+                </label>
+                <label style="display: flex;">
+                    <input type="radio" name="ys" value="delivery with yst">
+                    Доставка с установкой
+                </label>
+                <label style="display: flex;">
+                    <input type="radio" name="ys" value="nothing">
+                    Только товар
+                </label>
+            </div>
+        </div>
+        <div id="colors" style="display: none; flex-direction: column;">
+            <h3 align="center">Выберете цвет:</h3>
+            <select id="colo" style="display: flex; margin-left: auto; margin-right: auto;">
+                <option value="col1">Синий</option>
+                <option value="col2">Коричневый</option>
+                <option value="col3">Белый</option>
+                <option value="col4">Голубой</option>
+                <option value="col5">Желтый</option>
+            </select>
+        </div>
+        <div id="dop" style="display: flex; flex-direction: column; margin-left: auto; margin-right: auto;">
+            <h3 align="center">Дополнительно:</h3>
+            <div style="display: flex; flex-direction: row;">
+                <label style="display: flex; margin-left: auto; margin-right: auto;">
+                    <input type="checkbox" name="dopol" value="karkas">
+                    Жесткий каркас
+                </label>
+                <label style="display: flex; margin-right: auto;">
+                    <input type="checkbox" name="dopol" value="drevo">
+                    Деревянное основание
+                </label>
+            </div>
+        </div>
+        <button id="itog" style="display: flex; order: 2; margin-left: auto; margin-top: 20px; margin-right: auto; "> Посчитать стоимость </button>
+        <div style="display: flex; flex-direction: column;">
+            <h3 align="center">Результат:</h3>
+            <div id="result" align="center" style="background-color: white; margin-bottom: 10px; margin-right: 130px; margin-left: 130px; "></div>
+        </div>
+    </div>
+</body>
+</html>
