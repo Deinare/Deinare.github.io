@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", function () {
     //счет
     function calculate() {
         let kol = k.value;
-        if (kol !== "") {
+       
             if (kol.match(/^\d+$/) !== null) {
                 //переменные+услуга
                 let col = 1;
@@ -42,15 +42,14 @@ window.addEventListener("DOMContentLoaded", function () {
                     } 
                 } 
 
-                let res = cena[product.value] * kol * col + drevo + service + karkas;
+                let res = (cena[product.value] * col + drevo + service + karkas)*kol;
                 result.innerText = res;
-            } else {
+            } 
+            else {
                 result.innerText = "Некорректный ввод количества";
             }
-        }
-        else {
-            result.innerText = "";
-        }
+        
+       
     }
 
     ysluga.forEach(function (elem) {
