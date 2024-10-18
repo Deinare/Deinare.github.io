@@ -46,7 +46,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     } 
                 } 
 
-                let res = cena[product.value] * col + drevo + service*kol +karkas;
+                let res = cena[product.value] * col + drevo + service +karkas;
                 result.innerText = res;
             } 
             else {
