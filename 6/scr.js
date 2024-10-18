@@ -31,8 +31,11 @@ window.addEventListener("DOMContentLoaded", function () {
                 if (category[product.value] === 2 || category[product.value]===3) {
                     col = colormn[colorlist.value]*kol;
                 }
-                
-
+                //услуга
+                if (category[product.value] === 1 || category[product.value] === 2)
+                { 
+                    service=(ysluga[0].checked * (1000)) + (ysluga[1].checked * (1200));
+                }
                 //дополнительно
                 if (category[product.value] === 1 || category[product.value] === 2) {
                     if (port[0].checked === true) {
@@ -78,21 +81,25 @@ window.addEventListener("DOMContentLoaded", function () {
             calculate();
             d.style = "display:none";
             c.style = "display:flex; flex-direction: column";
+            s.style = "display:none";
         }
         if (category[product.value] === 1) {
             calculate();
             d.style = "display:flex; flex-direction: column";
+            s.style = "display:flex; flex-direction: column";
             c.style = "display:none";
         }
         if (category[product.value] === 2) {
             calculate();
             d.style = "display:flex; flex-direction: column";
             c.style = "display:flex; flex-direction: column";
+            s.style = "display:flex; flex-direction: column";
         }
         if (category[product.value] === 4) {
             calculate();
             d.style = "display:none";
             c.style = "display:none";
+            s.style = "display:none";
         }
     });
 });
