@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", function () {
     //блоки
     let c = document.getElementById("colors");
     let d= document.getElementById("dop");
+    let s= document.getElementsByName("service");
     //счет
     function calculate() {
         let kol = k.value;
