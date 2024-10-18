@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
                 //цвета
                 if (category[product.value] === 2 || category[product.value] === 3) {
-                    col = colormn[colorlist.value] * kol;
+                    col = colormn[colorlist.value];
                 }
                 //услуга
                 if (category[product.value] === 1 || category[product.value] === 2) {
@@ -49,7 +49,7 @@ window.addEventListener("DOMContentLoaded", function () {
                     }
                 }
 
-                let res = cena[product.value] * col + drevo + service + karkas;
+                let res = cena[product.value] * col*kol + drevo + service + karkas;
                 result.innerText = res;
             }
             else {
