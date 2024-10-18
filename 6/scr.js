@@ -28,21 +28,21 @@ window.addEventListener("DOMContentLoaded", function () {
 
                 //цвета
                 if (category[product.value] === 2 || category[product.value]===3) {
-                    col = colormn[colorlist.value];
+                    col = colormn[colorlist.value]*kol;
                 }
                 
 
                 //дополнительно
                 if (category[product.value] === 1 || category[product.value] === 2) {
                     if (port[0].checked === true) {
-                        karkas = 1000;
+                        karkas = 1000*kol;
                     } 
                     if (port[1].checked === true) {
-                        drevo = 1500;
+                        drevo = 1500*kol;
                     } 
                 } 
 
-                let res = (cena[product.value] * col + drevo + service + karkas)*kol;
+                let res = cena[product.value] * col + drevo + service*kol +karkas;
                 result.innerText = res;
             } 
             else {
