@@ -3,13 +3,14 @@
 <html lang="ru">
 <head>
     <title> Задание 6 </title>
+    <link rel="stylesheet" href="style.css">
     <script defer src="scr.js"></script>
 </head>
 
 <body style="display: flex; flex-direction: column;">
     <h1 style="margin-left: auto; margin-right: auto;">  Задание 6 </h1>
     <div style="margin-left: auto; margin-right: auto; width: 35%; background-color: #FFD700; border: inset; border-color: #FF4500; ">
-        <h3 align="center">Выберете товар:</h3>
+        <h3>Выберете товар:</h3>
         <select id="vybor" style="display: flex; margin-left: auto; margin-right: auto; margin-top: 15px;">
             <option value="1">Стул</option>
             <option value="2">Стол</option>
@@ -18,10 +19,10 @@
             <option value="5">Ковер</option>
             <option value="6">Лампа</option>
         </select>
-        <h3 align="center">Введите количество товара:</h3>
+        <h3>Введите количество товара:</h3>
         <input id="kol" placeholder="Количество" style="display: flex; margin-left: auto; margin-right: auto; margin-top: 10px;">
         <div id="service" style="display: flex; flex-direction: column;">
-            <h3 align="center">Выберете услугу:</h3>
+            <h3>Выберете услугу:</h3>
             <div style="display: flex; flex-direction: column;  margin-left: auto; margin-right: auto;">
                 <label style="display: flex;">
                     <input type="radio" name="ys" value="delivery">
@@ -38,7 +39,7 @@
             </div>
         </div>
         <div id="colors" style="display: none; flex-direction: column;">
-            <h3 align="center">Выберете цвет:</h3>
+            <h3>Выберете цвет:</h3>
             <select id="colo" style="display: flex; margin-left: auto; margin-right: auto;">
                 <option value="col1">Синий</option>
                 <option value="col2">Коричневый</option>
@@ -48,7 +49,7 @@
             </select>
         </div>
         <div id="dop" style="display: flex; flex-direction: column; margin-left: auto; margin-right: auto;">
-            <h3 align="center">Дополнительно:</h3>
+            <h3>Дополнительно:</h3>
             <div style="display: flex; flex-direction: row;">
                 <label style="display: flex; margin-left: auto; margin-right: auto;">
                     <input type="checkbox" name="dopol" value="karkas">
@@ -62,7 +63,7 @@
         </div>
 
         <div style="display: flex; flex-direction: column;">
-            <h3 align="center">Итоговая стоимость:</h3>
+            <h3>Итоговая стоимость:</h3>
             <div id="result" align="center" style="background-color: white; margin-bottom: 10px; margin-right: 180px; margin-left: 180px; "></div>
         </div>
     </div>
