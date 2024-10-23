@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    background: url(fon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gallerycontainer{
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel .slick-slide{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+img{
+    width: 700px;
+    height: 256px;
+}
+
+@media screen and (max-width: 1024px) {
+    .carousel{
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    img{
+        width: 300px;
+        height: 290px;
+    }
+
+    .carousel .slick-slide{
+        height: 300px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .carousel{
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    img{
+        width: 300px;
+        height: 150px;
+    }
+
+    .carousel .slick-slide{
+        height: 150px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
