@@ -1,0 +1,417 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.description {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.configuration-panel {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #3498db;
+}
+
+.config-group {
+    margin-bottom: 15px;
+}
+
+    .config-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+    .config-group input {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        width: 100px;
+    }
+
+.btn {
+    display: inline-block;
+    background: #3498db;
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+    .btn:hover {
+        background: #2980b9;
+    }
+
+.btn-generate {
+    background: #3498db;
+}
+
+.btn-solve {
+    background: #2ecc71;
+    width: 100%;
+    margin-top: 20px;
+}
+
+    .btn-solve:hover {
+        background: #27ae60;
+    }
+
+.input-section {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #2ecc71;
+}
+
+.objective-function, .constraints {
+    margin-bottom: 25px;
+}
+
+.coefficients-group, .constraint {
+    margin-bottom: 15px;
+}
+
+    .coefficients-group label, .constraint label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #2c3e50;
+    }
+
+.coefficients-row, .constraint-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+input[type="number"] {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 80px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+select {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.results {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+}
+
+.solution {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.iteration {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #eaeaea;
+}
+
+    .iteration h4 {
+        color: #2c3e50;
+        margin-bottom: 10px;
+    }
+
+.simplex-table {
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+    .simplex-table table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    .simplex-table th, .simplex-table td {
+        border: 1px solid #ddd;
+        padding: 8px 12px;
+        text-align: center;
+    }
+
+    .simplex-table th {
+        background: #34495e;
+        color: white;
+        font-weight: 600;
+    }
+
+    .simplex-table tr:nth-child(even) {
+        background: #f8f9fa;
+    }
+
+    .simplex-table tr:hover {
+        background: #e3f2fd;
+    }
+
+.variables {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.variable {
+    background: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.final-solution {
+    background: #e8f5e8;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #2ecc71;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: 600;
+    padding: 10px;
+    background: #fde8e8;
+    border-radius: 4px;
+}
+
+.solution-process h3 {
+    color: #2c3e50;
+    margin: 20px 0 10px 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #3498db;
+}
+
+@media (max-width: 768px) {
+    .coefficients-row, .constraint-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    input[type="number"], select {
+        width: 100%;
+    }
+
+    .simplex-table {
+        font-size: 12px;
+    }
+}
+/* Все предыдущие стили остаются, добавляем только новые */
+
+.coefficients-group {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+}
+
+    .coefficients-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 14px;
+    }
+
+.coefficients-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+    .coefficients-row input {
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 70px;
+        text-align: center;
+    }
+
+.constraint {
+    margin-bottom: 15px;
+    padding: 15px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #eaeaea;
+}
+
+    .constraint label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 14px;
+    }
+
+.constraint-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+    .constraint-row input {
+        padding: 8px 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        width: 70px;
+        text-align: center;
+    }
+
+    .constraint-row select {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        background: white;
+    }
+
+.objective-function h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #3498db;
+}
+
+.constraints h3 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e74c3c;
+}
+/* Все предыдущие стили остаются, добавляем: */
+
+.simplex-table td {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    padding: 6px 8px;
+}
+
+.explanation {
+    color: #7f8c8d;
+    font-style: italic;
+    margin: 10px 0;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 4px;
+    border-left: 3px solid #3498db;
+}
+
+.variable {
+    background: #3498db;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin: 5px;
+    display: inline-block;
+}
+
+.final-solution {
+    background: #e8f5e8;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #2ecc71;
+    margin-top: 20px;
+}
+
+.coefficients-row input, .constraint-row input {
+    width: 70px;
+    text-align: center;
+}
+
+.config-group input {
+    width: 100px;
+}
+.vector {
+    background: #e8f4fd;
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #3498db;
+    font-family: 'Courier New', monospace;
+    margin: 10px 0;
+}
+
+.final-solution {
+    background: #e8f5e8;
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #2ecc71;
+    margin-top: 20px;
+}
+
+.variable {
+    background: #3498db;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-weight: 600;
+    margin: 5px;
+    display: inline-block;
+    font-family: 'Courier New', monospace;
+}
