@@ -1,4 +1,4 @@
-﻿// Функция для работы с дробями
+// Функция для работы с дробями
 class Fraction {
     constructor(numerator, denominator = 1) {
         if (denominator === 0) throw new Error("Denominator cannot be zero");
@@ -242,6 +242,22 @@ class FractionalLinearTransformer {
         return html;
     }
 
+    // ГЛАВНОЕ: метод для получения коэффициента из целевой функции
+    getObjectiveCoefficient(varName) {
+        const objective = this.transformedProblem.objective;
+
+        if (varName === 'y₀') {
+            return objective.constant.clone();
+        } else if (varName.startsWith('y')) {
+            const index = parseInt(varName.substring(1)) - 1;
+            if (index >= 0 && index < objective.coeffs.length) {
+                return objective.coeffs[index].clone();
+            }
+        }
+        // Для искусственной переменной используем 'M'
+        return 'M';
+    }
+
     createSimplexTable(numerator, includeDelta = true) {
         if (!this.transformedProblem) {
             console.error("Нет преобразованной задачи");
@@ -259,41 +275,58 @@ class FractionalLinearTransformer {
         for (let j = 1; j <= n; j++) header.push(`y${j}`);
         header.push('a₁');
 
+        // Базисные переменные
         const basisVars = [];
         const basisCoeffs = [];
 
+        // Начальный базис: последние m переменных + искусственная
         for (let i = 0; i < m; i++) {
             const basisIndex = n - m + i + 1;
-            basisVars.push(`y${basisIndex}`);
-            const coeff = (basisIndex - 1 < numerator.coeffs.length) ?
-                numerator.coeffs[basisIndex - 1] : 0;
-            basisCoeffs.push(new Fraction(coeff));
+            const basisVar = `y${basisIndex}`;
+            basisVars.push(basisVar);
+            // ВАЖНО: Cбаз берется ИЗ ЦЕЛЕВОЙ ФУНКЦИИ
+            basisCoeffs.push(this.getObjectiveCoefficient(basisVar));
         }
 
+        // Искусственная переменная
         basisVars.push('a₁');
-        basisCoeffs.push('M');
+        basisCoeffs.push('M'); // M-метод
 
         console.log("Базисные переменные:", basisVars);
-        console.log("Коэффициенты базиса:", basisCoeffs);
+        console.log("Коэффициенты базиса (Cбаз):", basisCoeffs);
 
+        // Заполняем таблицу ограничениями - ВАЖНО: в столбец Cбаз выводим коэффициенты из целевой функции
         for (let i = 0; i < m; i++) {
             const constraint = problem.constraints[i];
-            const row = [basisVars[i], basisCoeffs[i], new Fraction(0)];
+            const row = [
+                basisVars[i],
+                basisCoeffs[i], // ВАЖНО: это коэффициент из целевой функции
+                new Fraction(0)
+            ];
 
-            row.push(constraint.constant);
+            // Столбец y₀
+            row.push(constraint.constant.clone());
+
+            // Столбцы y1, y2, ...
             constraint.coeffs.forEach(coeff => {
-                row.push(coeff);
+                row.push(coeff.clone());
             });
 
+            // Столбец искусственной переменной
             row.push(new Fraction(0));
 
             table.push(row);
         }
 
-        const additionalRow = ['a₁', 'M', new Fraction(1)];
-        additionalRow.push(problem.additionalConstraint.constant);
+        // Строка для дополнительного ограничения (искусственная переменная)
+        const additionalRow = [
+            'a₁',
+            'M', // ВАЖНО: M для искусственной переменной
+            new Fraction(1)
+        ];
+        additionalRow.push(problem.additionalConstraint.constant.clone());
         problem.additionalConstraint.coeffs.forEach(coeff => {
-            additionalRow.push(coeff);
+            additionalRow.push(coeff.clone());
         });
         additionalRow.push(new Fraction(1));
 
@@ -318,34 +351,45 @@ class FractionalLinearTransformer {
     calculateDeltaRow(table, basisCoeffs, n, m, objective) {
         const deltaRow = ['Δ', '', new Fraction(0)];
 
-        // Расчет для столбца B (индекс 2)
+        // Расчет для столбца B (индекс 2) - используем фиксированные Cбаз из целевой функции
         let sumB = new Fraction(0);
         for (let row = 0; row < table.length; row++) {
             const cell = table[row][2]; // Столбец B
-            const basisCoeff = basisCoeffs[row];
-            if (cell instanceof Fraction && basisCoeff instanceof Fraction) {
-                sumB = sumB.add(basisCoeff.multiply(cell));
+            const basisCoeff = basisCoeffs[row]; // Cбаз из целевой функции
+
+            if (cell instanceof Fraction) {
+                if (basisCoeff === 'M') {
+                    // Для M-метода: M * значение
+                    sumB = sumB.add(new Fraction(1000000).multiply(cell));
+                } else if (basisCoeff instanceof Fraction) {
+                    sumB = sumB.add(basisCoeff.multiply(cell));
+                }
             }
         }
         deltaRow[2] = sumB;
 
-        // Расчет для остальных столбцов (y₀, y1, y2, ...)
+        // Расчет для остальных столбцов (y₀, y1, y2, ...) - используем фиксированные Cбаз
         for (let col = 3; col < table[0].length; col++) {
             let sum = new Fraction(0);
 
             for (let row = 0; row < table.length; row++) {
                 const cell = table[row][col];
-                const basisCoeff = basisCoeffs[row];
-                if (cell instanceof Fraction && basisCoeff instanceof Fraction) {
-                    sum = sum.add(basisCoeff.multiply(cell));
+                const basisCoeff = basisCoeffs[row]; // Cбаз из целевой функции
+
+                if (cell instanceof Fraction) {
+                    if (basisCoeff === 'M') {
+                        sum = sum.add(new Fraction(1000000).multiply(cell));
+                    } else if (basisCoeff instanceof Fraction) {
+                        sum = sum.add(basisCoeff.multiply(cell));
+                    }
                 }
             }
 
-            // ВЫЧИТАЕМ коэффициент из целевой функции
+            // Вычитаем коэффициент из целевой функции
             let objectiveCoeff;
             if (col === 3) { // Столбец y₀
                 objectiveCoeff = objective.constant;
-            } else if (col >= 4) { // Столбцы y1, y2, ...
+            } else if (col >= 4 && col < 4 + n) { // Столбцы y1, y2, ...
                 const varIndex = col - 4;
                 objectiveCoeff = varIndex < objective.coeffs.length ?
                     objective.coeffs[varIndex] : new Fraction(0);
@@ -376,6 +420,8 @@ class FractionalLinearTransformer {
                 let cellValue;
                 if (cell instanceof Fraction) {
                     cellValue = cell.toString();
+                } else if (j === 1 && cell === 'M') { // ВАЖНО: правильно отображаем M в столбце Cбаз
+                    cellValue = 'M';
                 } else {
                     cellValue = String(cell);
                 }
@@ -434,7 +480,7 @@ class FractionalLinearTransformer {
         let basis = tableData.basis;
         let basisCoeffs = tableData.basisCoeffs;
 
-        const pivotCol = 3;
+        const pivotCol = 3; // Столбец y₀
 
         let minRatio = null;
         let pivotRow = -1;
@@ -470,11 +516,16 @@ class FractionalLinearTransformer {
 
             this.pivot(table, pivotRow, pivotCol);
 
+            // ВАЖНО: Cбаз для y₀ берется ИЗ ЦЕЛЕВОЙ ФУНКЦИИ
             basis[pivotRow] = 'y₀';
-            basisCoeffs[pivotRow] = problem.objective.constant.clone();
+            basisCoeffs[pivotRow] = this.getObjectiveCoefficient('y₀');
+
+            // Обновляем таблицу
+            table[pivotRow][0] = 'y₀';
+            table[pivotRow][1] = basisCoeffs[pivotRow];
 
             console.log("Базис после преобразования:", basis);
-            console.log("Cбаз после преобразования:", basisCoeffs.map(c => c.toString()));
+            console.log("Cбаз после преобразования:", basisCoeffs);
             console.log(`Заменяем ${oldBasis} (Cбаз=${oldCoeff}) на y₀ (Cбаз=${basisCoeffs[pivotRow]})`);
 
             const finalTable = this.removeArtificialColumn(table, basis, basisCoeffs, n, m);
@@ -516,19 +567,24 @@ class FractionalLinearTransformer {
 
         const pivotElementClone = pivotElement.clone();
 
-        for (let j = 0; j < table[pivotRow].length; j++) {
+        // Сохраняем исходное значение Cбаз для разрешающей строки
+        const originalBasisCoeff = table[pivotRow][1];
+
+        // Нормализуем разрешающую строку (кроме столбца Cбаз!)
+        for (let j = 2; j < table[pivotRow].length; j++) { // Начинаем с индекса 2 (столбец B)
             const cell = table[pivotRow][j];
             if (cell instanceof Fraction) {
                 table[pivotRow][j] = cell.divide(pivotElementClone);
             }
         }
 
+        // Обновляем остальные строки (кроме столбца Cбаз!)
         for (let i = 0; i < table.length; i++) {
             if (i !== pivotRow) {
                 const factorCell = table[i][pivotCol];
                 if (factorCell instanceof Fraction) {
                     const factor = factorCell.clone();
-                    for (let j = 0; j < table[i].length; j++) {
+                    for (let j = 2; j < table[i].length; j++) { // Начинаем с индекса 2 (столбец B)
                         const cell = table[i][j];
                         const pivotCell = table[pivotRow][j];
                         if (cell instanceof Fraction && pivotCell instanceof Fraction) {
@@ -538,6 +594,9 @@ class FractionalLinearTransformer {
                 }
             }
         }
+
+        // ВОССТАНАВЛИВАЕМ исходное значение Cбаз для разрешающей строки
+        table[pivotRow][1] = originalBasisCoeff;
     }
 
     removeArtificialColumn(table, basis, basisCoeffs, n, m) {
@@ -547,12 +606,10 @@ class FractionalLinearTransformer {
 
         const newBasis = basis.map(b => b === 'a₁' ? 'y₀' : b);
 
+        // ВАЖНО: Cбаз берется ИЗ ЦЕЛЕВОЙ ФУНКЦИИ
         const newBasisCoeffs = basisCoeffs.map((c, index) => {
-            if (c === 'M') {
-                return this.transformedProblem.objective.constant.clone();
-            }
-            if (c instanceof Fraction) {
-                return c.clone();
+            if (basis[index] === 'a₁') {
+                return this.getObjectiveCoefficient('y₀');
             }
             return c;
         });
@@ -563,6 +620,7 @@ class FractionalLinearTransformer {
             newRow.push(newBasis[i]);
             newRow.push(newBasisCoeffs[i]);
 
+            // Копируем все столбцы кроме последнего (искусственной переменной)
             for (let j = 2; j < table[i].length - 1; j++) {
                 const cell = table[i][j];
                 if (cell instanceof Fraction) {
@@ -577,7 +635,7 @@ class FractionalLinearTransformer {
 
         console.log("После removeArtificialColumn:");
         console.log("Базис:", newBasis);
-        console.log("Cбаз:", newBasisCoeffs.map(c => c.toString()));
+        console.log("Cбаз:", newBasisCoeffs);
 
         return {
             table: newTable,
@@ -619,7 +677,17 @@ class FractionalLinearTransformer {
 
         let currentTable = this.copyTable(finalTableData.table);
         let currentBasis = [...finalTableData.basis];
-        let currentBasisCoeffs = finalTableData.basisCoeffs.map(c => c.clone());
+
+        // ВАЖНО: Cбаз берется ИЗ ЦЕЛЕВОЙ ФУНКЦИИ, а не копируется
+        let currentBasisCoeffs = currentBasis.map(basisVar =>
+            this.getObjectiveCoefficient(basisVar)
+        );
+
+        // Обновляем Cбаз в самой таблице
+        for (let i = 0; i < currentTable.length; i++) {
+            currentTable[i][1] = currentBasisCoeffs[i];
+        }
+
         let currentDeltaRow = this.calculateDeltaRow(
             currentTable,
             currentBasisCoeffs,
@@ -705,7 +773,7 @@ class FractionalLinearTransformer {
                     table: this.copyTable(currentTable),
                     deltaRow: this.copyDeltaRow(currentDeltaRow),
                     basis: [...currentBasis],
-                    basisCoeffs: currentBasisCoeffs.map(c => c.clone()),
+                    basisCoeffs: [...currentBasisCoeffs],
                     header: [...finalTableData.header],
                     explanation: `Не найдена разрешающая строка для столбца ${finalTableData.header[pivotCol]} - задача неограничена`
                 });
@@ -713,19 +781,26 @@ class FractionalLinearTransformer {
             }
 
             const oldBasis = currentBasis[pivotRow];
-            const oldCoeff = currentBasisCoeffs[pivotRow].clone();
+            const oldCoeff = currentBasisCoeffs[pivotRow];
             const newBasis = finalTableData.header[pivotCol];
-            const newCoeff = this.getCoefficientForVariable(newBasis, finalTableData.header, this.transformedProblem.objective);
+
+            // ВАЖНО: Cбаз для новой переменной берется ИЗ ЦЕЛЕВОЙ ФУНКЦИИ
+            const newCoeff = this.getObjectiveCoefficient(newBasis);
 
             console.log(`Разрешающий элемент: строка ${pivotRow}, столбец ${pivotCol}`);
-            console.log(`Заменяем ${oldBasis} на ${newBasis}`);
+            console.log(`Заменяем ${oldBasis} (Cбаз=${oldCoeff}) на ${newBasis} (Cбаз=${newCoeff})`);
 
             this.pivot(currentTable, pivotRow, pivotCol);
 
+            // Обновляем базис и Cбаз (Cбаз берется из целевой функции)
             currentBasis[pivotRow] = newBasis;
             currentBasisCoeffs[pivotRow] = newCoeff;
 
-            // ПЕРЕСЧИТЫВАЕМ ДЕЛЬТУ после преобразования
+            // Обновляем таблицу - ВАЖНО: Cбаз в таблице тоже обновляем
+            currentTable[pivotRow][0] = newBasis;
+            currentTable[pivotRow][1] = newCoeff;
+
+            // Пересчитываем дельту (но Cбаз остается фиксированным из целевой функции)
             currentDeltaRow = this.calculateDeltaRow(
                 currentTable,
                 currentBasisCoeffs,
@@ -739,7 +814,7 @@ class FractionalLinearTransformer {
                 table: this.copyTable(currentTable),
                 deltaRow: this.copyDeltaRow(currentDeltaRow),
                 basis: [...currentBasis],
-                basisCoeffs: currentBasisCoeffs.map(c => c.clone()),
+                basisCoeffs: [...currentBasisCoeffs],
                 header: [...finalTableData.header],
                 explanation: `Разрешающий элемент: строка ${pivotRow + 1} (${oldBasis}), столбец ${finalTableData.header[pivotCol]}. Заменяем ${oldBasis} на ${newBasis}`,
                 pivot: { row: pivotRow, col: pivotCol }
@@ -754,7 +829,7 @@ class FractionalLinearTransformer {
                 table: this.copyTable(currentTable),
                 deltaRow: this.copyDeltaRow(currentDeltaRow),
                 basis: [...currentBasis],
-                basisCoeffs: currentBasisCoeffs.map(c => c.clone()),
+                basisCoeffs: [...currentBasisCoeffs],
                 header: [...finalTableData.header],
                 explanation: "Достигнуто максимальное количество итераций (20)"
             });
@@ -767,23 +842,6 @@ class FractionalLinearTransformer {
             basisCoeffs: currentBasisCoeffs,
             header: finalTableData.header
         };
-    }
-
-    getCoefficientForVariable(varName, header, objective) {
-        if (varName === 'y₀') {
-            return objective.constant.clone();
-        }
-
-        for (let i = 0; i < header.length; i++) {
-            if (header[i] === varName && i >= 4) {
-                const index = i - 4;
-                if (index < objective.coeffs.length) {
-                    return objective.coeffs[index].clone();
-                }
-            }
-        }
-
-        return new Fraction(0);
     }
 
     extractOptimalSolution(table, basis, basisCoeffs, n) {
@@ -799,6 +857,7 @@ class FractionalLinearTransformer {
             const value = table[i][2];
             solution.variables[varName] = value instanceof Fraction ? value.clone() : new Fraction(value);
 
+            // Вычисляем значение целевой функции
             if (basisCoeffs[i] instanceof Fraction) {
                 solution.objectiveValue = solution.objectiveValue.add(
                     basisCoeffs[i].multiply(solution.variables[varName])
@@ -817,7 +876,7 @@ class FractionalLinearTransformer {
             }
         });
 
-        // ВЫЧИСЛЯЕМ ИСХОДНЫЕ ПЕРЕМЕННЫЕ x = y / y₀
+        // Вычисляем исходные переменные x = y / y₀
         const y0 = solution.variables['y₀'];
         if (!y0.isZero()) {
             for (let i = 1; i <= n; i++) {
@@ -825,7 +884,6 @@ class FractionalLinearTransformer {
                 solution.originalVariables[`x${i}`] = yi.divide(y0);
             }
         } else {
-            // Если y₀ = 0, то исходные переменные не определены
             for (let i = 1; i <= n; i++) {
                 solution.originalVariables[`x${i}`] = new Fraction(0);
             }
@@ -833,7 +891,8 @@ class FractionalLinearTransformer {
 
         return solution;
     }
-}
+} performFullSimplex(finalTableData)
+
 
 function generateProblem() {
     const n = parseInt(document.getElementById('numVariables').value);
